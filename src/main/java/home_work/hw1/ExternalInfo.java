@@ -1,4 +1,4 @@
-package home_work;
+package home_work.hw1;
 
 import org.springframework.stereotype.Component;
 

@@ -1,17 +1,11 @@
-package home_work;
+package home_work.hw1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
-import javax.cache.Cache;
-import javax.cache.CacheManager;
-import javax.cache.Caching;
 import javax.cache.annotation.CacheDefaults;
 import javax.cache.annotation.CacheKey;
-import javax.cache.annotation.CachePut;
 import javax.cache.annotation.CacheResult;
 import java.util.HashMap;
 import java.util.Map;
