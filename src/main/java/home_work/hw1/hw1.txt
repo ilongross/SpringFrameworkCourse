@@ -29,6 +29,7 @@ ExternalInfoProcess должен вычитывать из конфига пер
 
 
 Errors:
+1.
 Аннотацию @CacheResult необходимо реализовать самостоятельно, с помощью проксирования и MethodInvocation.
 Аннотация должна работать над методами.
 
@@ -38,3 +39,23 @@ ExternalInfoBeanFactoryPostProcessor должен выводить WARN толь
 Наполнение и удаление тестовых данных в ExternalServiceImpl должно происходить в методах init() и destroy()
 с аннотациями @PostConstruct и @PreDestroy.
 Сейчас в ExternalServiceMapBeanPostProcessor наполнение и удаление данных происходит перед попаданием бина ExternalServiceImpl в контекст.
+
+
+2.
+Аннотация CacheResult должна работать над всеми методами любых бинов,
+т.е. перед вызовом нашего метода invocation.proceed() должна выполняться проверка наличия результата в кеше.
+Если результат есть, то вытащить результат из кеша и передать его, как результат работы метода,
+иначе выполнить метод и результат выполнения этого метода закешировать.
+Кеш должен иметь структуру типа: Map<MethodName, Map<MethodArguments, ResultCallMethod>>.
+
+Проверку на prototype с аннотацией CacheResult лучше выполнять на этапе BeanFactoryPostProcessor,
+т.к. для данной проверки вам инициализированные бины не нужны.
+И там у BeanDefinition уже есть метод isPrototype,
+но для проверки наличия аннотации на методе необходимо будет воспользоваться функциями рефлексии.
+
+Пример:
+String beanClassName = beanDefinition.getBeanClassName();
+Class<?> beanClass = Class.forName(beanClassName);
+for (Method method : beanClass.getDeclaredMethods()) {
+//ваши проверки методов
+ }
