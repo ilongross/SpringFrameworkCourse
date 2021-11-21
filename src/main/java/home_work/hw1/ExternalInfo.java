@@ -1,7 +1,5 @@
 package home_work.hw1;
 
-import org.springframework.stereotype.Component;
-
 public class ExternalInfo {
 
     private int id;

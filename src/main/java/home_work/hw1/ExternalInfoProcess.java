@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Lazy
 public class ExternalInfoProcess implements Process{
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ExternalServiceMapBeanPostProcessor.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExternalInfoBeanFactoryPostProcessor.class);
 
     @Value("${id-not-process}")
     private int idNotProcess;

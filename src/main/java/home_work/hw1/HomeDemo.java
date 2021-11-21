@@ -20,6 +20,11 @@ public class HomeDemo {
         flow.run(3);
         flow.run(4);
 
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                context.close();
+            }});
+
     }
 
 }

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Flow {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ExternalServiceMapBeanPostProcessor.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExternalInfoBeanFactoryPostProcessor.class);
 
     private ExternalService externalService;
     private Process process;
@@ -25,7 +25,7 @@ public class Flow {
             process.run(externalInfo);
         }
         else {
-            LOGGER.info("getInfo() != NULL: {}", externalInfo.getClass());
+            LOGGER.info("getInfo() != null: {}", externalInfo);
         }
     }
 

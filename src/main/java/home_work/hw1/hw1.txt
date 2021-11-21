@@ -25,3 +25,16 @@ ExternalInfoProcess должен вычитывать из конфига пер
         flow.run(4);
 Так же создать BeanFactoryPostProcessor, который будет писать в лог WARN если есть бин, который имеет Scope=Prototype и аннотацию @CacheResult.
 Проверить работоспособность данного BeanFactoryPostProcessor.
+
+
+
+Errors:
+Аннотацию @CacheResult необходимо реализовать самостоятельно, с помощью проксирования и MethodInvocation.
+Аннотация должна работать над методами.
+
+ExternalInfoBeanFactoryPostProcessor должен выводить WARN только для бинов,
+которые являются Prototype и содержат методы, помеченные нашей аннотацией @CacheResult.
+
+Наполнение и удаление тестовых данных в ExternalServiceImpl должно происходить в методах init() и destroy()
+с аннотациями @PostConstruct и @PreDestroy.
+Сейчас в ExternalServiceMapBeanPostProcessor наполнение и удаление данных происходит перед попаданием бина ExternalServiceImpl в контекст.
