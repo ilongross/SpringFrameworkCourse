@@ -1,0 +1,88 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    
+    <changeSet id="insert-ad-address" author="iv_zverev">
+        <insert tableName="address" schemaName="ad">
+            <column name="country">Russia</column>
+            <column name="city">Moscow</column>
+            <column name="street">Tverskaya</column>
+            <column name="home">77</column>
+        </insert>
+        <insert tableName="address" schemaName="ad">
+            <column name="country">Russia</column>
+            <column name="city">Saint-Petersburg</column>
+            <column name="street">Bolschaya</column>
+            <column name="home">12</column>
+        </insert>
+        <insert tableName="address" schemaName="ad">
+            <column name="country">Russia</column>
+            <column name="city">Kazan</column>
+            <column name="street">Lenina</column>
+            <column name="home">35</column>
+        </insert>
+        <insert tableName="address" schemaName="ad">
+            <column name="country">Russia</column>
+            <column name="city">Irkutsk</column>
+            <column name="street">Surnova</column>
+            <column name="home">20</column>
+        </insert>
+    </changeSet>
+
+    
+    <changeSet id="insert-ad-group" author="iv_zverev">
+        <insert tableName="group" schemaName="ad">
+            <column name="name">admin</column>
+        </insert>
+        <insert tableName="group" schemaName="ad">
+            <column name="name">user</column>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="insert-ad-users" author="iv_zverev">
+        <insert tableName="users" schemaName="ad">
+            <column name="name">Elon Mask</column>
+            <column name="email">elon.mask@yahoo.com</column>
+            <column name="address">1</column>
+        </insert>
+        <insert tableName="users" schemaName="ad">
+            <column name="name">Bill Gates</column>
+            <column name="email">bfirst@outlook.com</column>
+            <column name="address">2</column>
+        </insert>
+        <insert tableName="users" schemaName="ad">
+            <column name="name">Jeff Bezos</column>
+            <column name="email">be_zos@amazon.com</column>
+            <column name="address">3</column>
+        </insert>
+        <insert tableName="users" schemaName="ad">
+            <column name="name">Pavel Durov</column>
+            <column name="email">pasha_telega@tg.me</column>
+            <column name="address">4</column>
+        </insert>
+    </changeSet>
+    
+    
+    <changeSet id="insert-ad-users-groups" author="iv_zverev">
+        <insert tableName="users_groups" schemaName="ad">
+            <column name="user_id">1</column>
+            <column name="group_id">2</column>
+        </insert>
+        <insert tableName="users_groups" schemaName="ad">
+            <column name="user_id">2</column>
+            <column name="group_id">2</column>
+        </insert>
+        <insert tableName="users_groups" schemaName="ad">
+            <column name="user_id">3</column>
+            <column name="group_id">2</column>
+        </insert>
+        <insert tableName="users_groups" schemaName="ad">
+            <column name="user_id">4</column>
+            <column name="group_id">1</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

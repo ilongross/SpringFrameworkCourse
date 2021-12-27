@@ -1,0 +1,27 @@
+
+#Course
+id: 1
+
+
+#Spring Boot Hibernate
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/account
+    username: account
+    password: account
+  jpa:
+    show-sql: true
+  liquibase:
+#    change-log: classpath:db/changelog/init/init.xml
+#    change-log: classpath:db/changelog/v1.0/currency+status.xml
+#    change-log: classpath:db/changelog/v1.0/init_ad_schema.xml
+
+
+
+#Home Work
+id-not-process: 3
+
+
+
+#Training
+personalName: Ilya
