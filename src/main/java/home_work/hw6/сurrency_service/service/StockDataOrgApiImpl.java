@@ -12,17 +12,17 @@ import org.springframework.web.client.RestTemplate;
 import java.util.stream.Collectors;
 
 @Service
-public class StockDataOrgImpl implements StockDataOrgApi{
+public class StockDataOrgApiImpl implements StockDataOrgApi{
 
     private final RestTemplate restTemplate;
     private final String apiToken;
     private final String urlActualTickers;
     private final String urlHistoricalTickers;
 
-    public StockDataOrgImpl(@Qualifier("restTemplateExchange") RestTemplate restTemplate,
-                            @Value("${stock-data-org.api-token}") String apiToken,
-                            @Value("${stock-data-org.url.actual-tickers}") String urlActualTickers,
-                            @Value("${stock-data-org.url.historical-tickers}") String urlHistoricalTickers) {
+    public StockDataOrgApiImpl(@Qualifier("restTemplateExchange") RestTemplate restTemplate,
+                               @Value("${stock-data-org.api-token}") String apiToken,
+                               @Value("${stock-data-org.url.actual-tickers}") String urlActualTickers,
+                               @Value("${stock-data-org.url.historical-tickers}") String urlHistoricalTickers) {
         this.restTemplate = restTemplate;
         this.apiToken = apiToken;
         this.urlActualTickers = urlActualTickers;
