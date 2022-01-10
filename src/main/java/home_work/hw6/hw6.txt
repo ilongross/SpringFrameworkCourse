@@ -1,0 +1,25 @@
+Реализовать сервис stock-service.
+Сервис должен:
+
+1. Получать из сервиса www.stockdata.org по заданным тикетам акций
+(в контроллере получает список тикетов (APPL, TSLA и т.д.)
+и возвращает по ним актуальную цену, в какой валюте эта цена и имя).
+
+StockDataActualRq:
+List<String> tickers
+
+StockDataActualRs:
+Map<String, Object> tickers
+
+
+2. Получать из сервиса исторические данные по заданным тикетам акций и дате
+(в контроллере получаем список тикетов и дату
+и возвращаем по ним цену, в какой валюте цена, имя и дату).
+
+Rq:
+List<String> tickers
+String date;
+
+Rs:
+Map<String, Object> tickers
+String date;

@@ -16,6 +16,26 @@ spring:
 #    change-log: classpath:db/changelog/v1.0/currency+status.xml
 #    change-log: classpath:db/changelog/v1.0/init_ad_schema.xml
 
+#RestTemplate
+currency:
+  token: 69e74891e4243c66687f9c91012108e0
+  url:
+    convert: http://data.fixer.io/api/convert?access_key=%s&from=%s&to=%s&amount=%s
+    all-exchange: http://data.fixer.io/api/latest?access_key=%s
+
+service:
+  currency:
+    convert: http://localhost:8080/convert
+    all-exchange: http://localhost:8080/all-exchange
+
+stock-data-org:
+  api-token: rvR6wJ5iXXLRwf7OG45pSXdSPplqApVflFy7m6jN
+  url:
+    actual-tickers: https://api.stockdata.org/v1/data/quote?symbols=%s&api_token=%s
+    historical-tickers: https://api.stockdata.org/v1/data/eod?symbols=%s&date=%s&api_token=%s
+
+#server:
+#  port:
 
 
 #Home Work
