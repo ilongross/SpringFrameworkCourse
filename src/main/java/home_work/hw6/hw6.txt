@@ -16,10 +16,10 @@ Map<String, Object> tickers
 (в контроллере получаем список тикетов и дату
 и возвращаем по ним цену, в какой валюте цена, имя и дату).
 
-Rq:
+StockDataHistoricalRq:
 List<String> tickers
 String date;
 
-Rs:
+StockDataHistoricalRs:
 Map<String, Object> tickers
 String date;
